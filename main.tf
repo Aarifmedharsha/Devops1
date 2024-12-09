@@ -166,21 +166,21 @@ resource "aws_s3_bucket" "aarif-private-bucket" {
 resource "aws_s3_bucket_ownership_controls" "aarif_private_bucket_ownership_controls" {
   bucket = aws_s3_bucket.aarif-private-bucket.id
   rule {
-    object_ownership = "BucketOwnerPreferred"  
+    object_ownership = "BucketOwnerPreferred"
   }
 }
 
 # S3 Bucket ACL
 resource "aws_s3_bucket_acl" "aarif_private_bucket_acl" {
-  depends_on = [aws_s3_bucket_ownership_controls.aarif_private_bucket_ownership_controls]  # Ensure ownership controls are created first
+  depends_on = [aws_s3_bucket_ownership_controls.aarif_private_bucket_ownership_controls] # Ensure ownership controls are created first
   bucket = aws_s3_bucket.aarif-private-bucket.id
-  acl    = "private"  # Apply private ACL
+  acl = "private" # Apply private ACL
 }
 
 resource "aws_s3_bucket_versioning" "s3_versioning" {
   bucket = aws_s3_bucket.aarif-private-bucket.id
   versioning_configuration {
-    status = "Enabled"
+    status = "Enabled"
   }
 }
 
