@@ -9,7 +9,12 @@ This project aims to design a secure, scalable, and highly available infrastruct
 - **AWS (Amazon Web Services)**
 
 ## Infrastructure Design
-The infrastructure is designed to ensure high availability, security, and scalability. The key components include:
+The infrastructure is designed to ensure high availability, security, and scalability. 
+
+Design:
+![design](https://github.com/Aarifmedharsha/Devops1/blob/main/Picture1.png)
+
+The key components include:
 
 ### Application Tiers
 - **Autoscaling Group (ASG)** in a public subnet with servers running in at least 2 Availability Zones (AZs).
