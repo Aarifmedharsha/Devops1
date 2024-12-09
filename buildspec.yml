@@ -20,6 +20,10 @@ phases:
       - terraform plan -out=tfplan
       - echo Applying Deployment
       - terraform apply -auto-approve tfplan
+      - echo Waiting for 5 minutes before destroying the deployment
+      - sleep 300
+      - echo Destroying Deployment
+      - terraform destroy -auto-approve
 artifacts:
   files:
     - '**/*'
