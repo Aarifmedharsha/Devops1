@@ -161,9 +161,18 @@ resource "aws_lb_target_group" "aarif_network_targets" {
 # S3 Bucket
 resource "aws_s3_bucket" "aarif_private_bucket" {
   bucket = "aarif-private-bucket"
+}
+
+resource "aws_s3_bucket_acl" "aarif_private_bucket_acl" {
+  bucket = aws_s3_bucket.aarif_private_bucket.id
   acl    = "private"
-  versioning {
-    enabled = true
+}
+
+resource "aws_s3_bucket_versioning" "aarif_private_bucket_versioning" {
+  bucket = aws_s3_bucket.aarif_private_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
