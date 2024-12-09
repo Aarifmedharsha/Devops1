@@ -220,6 +220,6 @@ resource "aws_iam_role_policy_attachment" "aarif_attach_policy" {
 }
 
 resource "aws_iam_instance_profile" "aarif_public_instance_profile" {
-  name = "aarif-public-instance-profile"
+  name = "aarif-public-instance-profile-1"
   role = aws_iam_role.aarif_public_role.name
 }
