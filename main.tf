@@ -208,7 +208,7 @@ resource "aws_iam_policy" "aarif_s3_access" {
       {
         Action   = ["s3:*"],
         Effect   = "Allow",
-        Resource = [aws_s3_bucket.aarif-private-bucket.arn, "${aws_s3_bucket.aarif-private-bucket.arn}/*"]
+        Resource = [aws_s3_bucket.aarif_private_bucket.arn, "${aws_s3_bucket.aarif_private_bucket.arn}/*"]
       }
     ]
   })
@@ -219,7 +219,7 @@ resource "aws_iam_role_policy_attachment" "aarif_attach_policy" {
   policy_arn = aws_iam_policy.aarif_s3_access.arn
 }
 
-resource "aws_iam_instance_profile" "aarif_public_role" {
+resource "aws_iam_instance_profile" "aarif_public_instance_profile" {
   name = "aarif-public-instance-profile"
   role = aws_iam_role.aarif_public_role.name
 }
