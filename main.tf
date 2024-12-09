@@ -90,7 +90,7 @@ resource "aws_security_group" "aarif_private_sg" {
 
 # EC2 Instances and ASG
 resource "aws_launch_template" "aarif_public_instance" {
-  name          = "aarif-public-instance-template"
+  name          = "aarif-public-instance-template-2"
   instance_type = "t2.micro"
   image_id      = "ami-055e3d4f0bbeb5878" # Amazon Linux 2 AMI
   iam_instance_profile {
@@ -220,6 +220,6 @@ resource "aws_iam_role_policy_attachment" "aarif_attach_policy" {
 }
 
 resource "aws_iam_instance_profile" "aarif_public_instance_profile" {
-  name = "aarif-public-instance-profile-1"
+  name = "aarif-public-instance-profile-2"
   role = aws_iam_role.aarif_public_role.name
 }
