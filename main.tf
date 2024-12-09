@@ -208,7 +208,7 @@ resource "aws_iam_policy" "aarif_s3_access" {
       {
         Action   = ["s3:*"],
         Effect   = "Allow",
-        Resource = [aws_s3_bucket.aarif_private_bucket.arn, "${aws_s3_bucket.aarif_private_bucket.arn}/*"]
+        Resource = [aws_s3_bucket.aarif-private-bucket.arn, "${aws_s3_bucket.aarif-private-bucket.arn}/*"]
       }
     ]
   })
