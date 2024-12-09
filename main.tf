@@ -94,7 +94,7 @@ resource "aws_launch_template" "aarif_public_instance" {
   instance_type = "t2.micro"
   image_id      = "ami-055e3d4f0bbeb5878" # Amazon Linux 2 AMI
   iam_instance_profile {
-    name = aws_iam_instance_profile.aarif_public_role.name
+    name = aws_iam_instance_profile.aarif_public_instance_profile.name
   }
   vpc_security_group_ids = [aws_security_group.aarif_public_sg.id]
 }
@@ -208,7 +208,7 @@ resource "aws_iam_policy" "aarif_s3_access" {
       {
         Action   = ["s3:*"],
         Effect   = "Allow",
-        Resource = [aws_s3_bucket.aarif_private_bucket.arn, "${aws_s3_bucket.aarif_private_bucket.arn}/*"]
+        Resource = [aws_s3_bucket.aarif-private-bucket.arn, "${aws_s3_bucket.aarif-private-bucket.arn}/*"]
       }
     ]
   })
