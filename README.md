@@ -45,7 +45,7 @@ The Terraform configuration sets up the AWS infrastructure with the following re
 
 ## GitHub Repository
 The Terraform code is stored in the following GitHub repository:
-Devops1 Repository
+[Repository](https://github.com/Aarifmedharsha/Devops1/)
 
 ## AWS CodeBuild Setup
 AWS CodeBuild is used to automate the provisioning of the infrastructure. The build process is defined in the `buildspec.yml` file, which includes:
@@ -57,7 +57,7 @@ AWS CodeBuild is used to automate the provisioning of the infrastructure. The bu
 This project successfully provisions a multi-tiered web application environment in AWS using Terraform. The setup ensures a secure, scalable, and highly available infrastructure, with automated provisioning and management using AWS CodeBuild.
 
 ## References
-- AWS Official Documentation
-- Terraform AWS Provider Documentation
-- GitHub Documentation
-- AWS CodeBuild Documentation
+- [AWS Official Documentation](https://docs.aws.amazon.com/)
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [GitHub Documentation](https://docs.github.com/en)
+- [AWS CodeBuild Documentation](https://docs.aws.amazon.com/codebuild/)
