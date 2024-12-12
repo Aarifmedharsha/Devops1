@@ -22,7 +22,7 @@ phases:
       - terraform apply -auto-approve tfplan
   post_build:
     commands:
-      - echo Waiting for 5 minutes before destroying the deployment
+      - echo Waiting for 30 minutes before destroying the deployment
       - sleep 1800
       - echo Destroying Deployment
       - terraform destroy -auto-approve
