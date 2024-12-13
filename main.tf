@@ -84,7 +84,7 @@ resource "aws_security_group" "aarif_private_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] # Allows all outbound traffic
+    security_groups = [aws_security_group.aarif_private_sg.id] # Allows all traffic from the public security group
   }
 }
 
